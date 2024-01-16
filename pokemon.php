@@ -96,7 +96,6 @@ $result=$connec->query($sql);
 while ($row=$result->fetch_assoc()){                              
 
 ?>
-
     <section class="pokemon">
         <div class="carte">
                 <div class="img_bg">
@@ -106,10 +105,6 @@ while ($row=$result->fetch_assoc()){
                 <h3>Poke Taille : <?= $row['pok_taille'] ?></h3>
     </div>
     </section>
-    
-
-
-
 
 <?php
 
