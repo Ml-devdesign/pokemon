@@ -10,7 +10,7 @@
 
 
 <?php
-<!-- //     include 'connec.php' ;
+//     include 'connec.php' ;
 
 // $sql='SELECT * FROM pokemon';
 // $result=$connec->query($sql);/*le resultat demander = connection -> la requet (sql) */
@@ -21,7 +21,7 @@
 
 //     printf("<img src=" . $row['pok_image_online']. ">", $row["pok_name"], $row["pok_generation"]);
 // } -->
-
+// <!--$sql='SELECT * FROM pokemon limit 20';  -> avec ou sans limite fonctionne moins de latence -->
 ?>
 
 
