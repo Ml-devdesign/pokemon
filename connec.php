@@ -7,10 +7,8 @@
     $connec=new mysqli($server, $user,$password , $database);/*ce connect a la base de donnéé indispensable */
 ?>
 
-
-
 <?php
-<!-- //     include 'connec.php' ;
+// <!--     include 'connec.php' ;
 
 // $sql='SELECT * FROM pokemon';
 // $result=$connec->query($sql);/*le resultat demander = connection -> la requet (sql) */

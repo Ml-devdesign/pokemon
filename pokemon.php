@@ -68,45 +68,27 @@ $result=$connec->query($sql);/*le resultat demander = connection -> la requet (s
     <img class="main_hero" src="../pokemon/reel.png" alt="">
 </header>
 
-
-
     <main class="main_main">
-
 
 <?php
 
 while ($row=$result->fetch_assoc()){                              
 
-
-
 ?>
-
     <section class="pokemon">
         <div class="carte">
-                <div class="img_bg">
-                <img src=" <?= $row['pok_image_online'] ?>" class="image">
-
-
-
-
-                </div>
-                <h1><?= $row['pok_nom'] ?></h1>
-                <h3>Poke Taille : <?= $row['pok_taille'] ?></h3>
-    </div>
+            <div class="img_bg">
+            <img src=" <?= $row['pok_image_online'] ?>" class="image">
+            </div>
+            <h1><?= $row['pok_nom'] ?></h1>
+            <h3>Poke Taille : <?= $row['pok_taille'] ?></h3>
+        </div>
     </section>
-    
-
-
-
-
 <?php
 
 }
 
 ?>
-
-
-
 </main>
 <!-- Code injected by live-server -->
 <script>
