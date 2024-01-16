@@ -1,9 +1,27 @@
+__                                 
+<!-- 
+    
+ ▄▄▄·      ▄ •▄ ▄▄▄ .• ▌ ▄ ·.        ▐ ▄ 
+▐█ ▄█▪     █▌▄▌▪▀▄.▀··██ ▐███▪▪     •█▌▐█
+ ██▀· ▄█▀▄ ▐▀▀▄·▐▀▀▪▄▐█ ▌▐▌▐█· ▄█▀▄ ▐█▐▐▌
+▐█▪·•▐█▌.▐▌▐█.█▌▐█▄▄▌██ ██▌▐█▌▐█▌.▐▌██▐█▌
+.▀    ▀█▄▀▪·▀  ▀ ▀▀▀ ▀▀  █▪▀▀▀ ▀█▄▀▪▀▀ █▪ 
+
+ ____                    
+|  _ \   /\        /\    
+| |_) ) /  \      /  \   
+|  _ ( / /\ \    / /\ \  
+| |_) ) /__\ \  / /__\ \ 
+|____/________\/________\
+                         
+-->
+
 
 <?php
 include 'connec.php' ;
 
-$sql='SELECT * FROM pokemon';
-$result=$connec->query($sql);/*le resultat demander = connection -> la requet (sql) */
+$sql='SELECT * FROM pokemon limit 20'; 
+$result=$connec->query($sql);
 
 ?>
 <!DOCTYPE html>
@@ -12,6 +30,7 @@ $result=$connec->query($sql);/*le resultat demander = connection -> la requet (s
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="pokemon.css">
     
 <style>
     :root {
@@ -37,6 +56,8 @@ $result=$connec->query($sql);/*le resultat demander = connection -> la requet (s
         padding-bottom: 123px;
     }
     .pokemon{
+        
+        
         
     }
 
@@ -64,10 +85,10 @@ $result=$connec->query($sql);/*le resultat demander = connection -> la requet (s
     </style>
 </head>
 <body>
-<header>
-    <img class="main_hero" src="../pokemon/reel.png" alt="">
+<header class="main_hero">
+    <img class="main-hero-img">
+    <img class="Titre-site">
 </header>
-
     <main class="main_main">
 
 <?php
@@ -75,58 +96,26 @@ $result=$connec->query($sql);/*le resultat demander = connection -> la requet (s
 while ($row=$result->fetch_assoc()){                              
 
 ?>
+
     <section class="pokemon">
         <div class="carte">
-            <div class="img_bg">
-            <img src=" <?= $row['pok_image_online'] ?>" class="image">
-            </div>
-            <h1><?= $row['pok_nom'] ?></h1>
-            <h3>Poke Taille : <?= $row['pok_taille'] ?></h3>
-        </div>
+                <div class="img_bg">
+                <img src=" <?= $row['pok_image_online'] ?>" class="image">
+                </div>
+                <h1><?= $row['pok_nom'] ?></h1>
+                <h3>Poke Taille : <?= $row['pok_taille'] ?></h3>
+    </div>
     </section>
+    
+
+
+
+
 <?php
 
 }
 
 ?>
 </main>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
 </body>
 </html>
