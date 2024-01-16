@@ -38,8 +38,6 @@ $result=$connec->query($sql);/*le resultat demander = connection -> la requet (s
     }
     .pokemon{
         
-        
-        
     }
 
     .carte{

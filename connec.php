@@ -18,7 +18,6 @@
 
 // while ($row=$result->fetch_assoc()){/* pour le (tableau = resultat dans un ensemble sous forme de tableau )
 
-
 //     printf("<img src=" . $row['pok_image_online']. ">", $row["pok_name"], $row["pok_generation"]);
 // } -->
 
